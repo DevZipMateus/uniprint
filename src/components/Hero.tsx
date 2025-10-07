@@ -1,13 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-subtle pt-20"
+      className="relative min-h-screen flex items-center justify-center pt-20"
+      style={{
+        backgroundImage: `url(${heroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      <div className="container mx-auto px-4 py-20">
+      {/* Overlay para melhorar legibilidade */}
+      <div className="absolute inset-0 bg-background/85" />
+      
+      <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* H1 - Nome da empresa */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
